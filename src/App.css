@@ -206,6 +206,45 @@ body {
   background-color: #868e96;
 }
 
+.evolution-chain {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.evolution-node {
+  text-align: center;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.evolution-node.current {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.evolution-node img {
+  width: 60px;
+  height: 60px;
+}
+
+.evolution-arrow {
+  color: #666;
+  font-size: 1.5rem;
+}
+
+.evolution-arrow.evolved {
+  color: #4CAF50;
+}
+
+.evolution-section {
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .app-container {
