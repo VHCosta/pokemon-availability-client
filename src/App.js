@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
 
@@ -52,7 +52,9 @@ const METHOD_CONFIG = {
   'old-rod': { label: 'Old Rod', color: '#f59f00' },
   'good-rod': { label: 'Good Rod', color: '#f59f00' },
   'rock-smash': { label: 'Rock Smash', color: '#868e96' },
-  'headbutt': { label: 'Headbutt', color: '#a9e34b' }
+  'headbutt': { label: 'Headbutt', color: '#a9e34b' },
+  'evolution': { label: 'Evolution', color: '#9775fa' },
+  'egg': { label: 'Egg', color: '#ffd43b' }
 };
 
 function App() {
@@ -136,29 +138,43 @@ function App() {
                   <div className="pokemon-id">#{String(pokemon.id).padStart(3, '0')}</div>
                   <h3 className="pokemon-name">{pokemon.name}</h3>
                   
-                  <div className="game-logos">
-                    {pokemon.games.map(gameId => (
-                      <img
-                        key={gameId}
-                        src={`/game-logos/${gameId}.png`}
-                        alt={GAME_LIST.find(g => g.id === gameId)?.name || gameId}
-                        className="game-logo"
-                        title={GAME_LIST.find(g => g.id === gameId)?.name}
-                      />
-                    ))}
-                  </div>
+                  <div className="games-section">
+                    {pokemon.games.map(gameId => {
+                      const gameMethods = [
+                        ...(pokemon.methodsByGame[gameId] || []),
+                        ...(pokemon.evolutions?.prev ? ['evolution'] : []),
+                        ...((!pokemon.evolutions?.prev && 
+                          ['gold', 'silver', 'crystal', 'ruby', 'sapphire', 'emerald', 'firered', 'leafgreen',
+                           'diamond', 'pearl', 'platinum', 'heartgold', 'soulsilver', 'black', 'white', 
+                           'black-2', 'white-2', 'x', 'y', 'omega-ruby', 'alpha-sapphire', 'sun', 'moon',
+                           'ultra-sun', 'ultra-moon', 'sword', 'shield', 'brilliant-diamond', 'shining-pearl',
+                           'legends-arceus', 'scarlet', 'violet'].includes(gameId)
+                        ) ? ['egg'] : [])
+                      ];
 
-                  <div className="method-badges">
-                    {pokemon.methods.map(method => {
-                      const config = METHOD_CONFIG[method] || { label: method, color: '#adb5bd' };
                       return (
-                        <span
-                          key={method}
-                          className="method-badge"
-                          style={{ backgroundColor: config.color }}
-                        >
-                          {config.label}
-                        </span>
+                        <div key={gameId} className="game-section">
+                          <img
+                            src={`/game-logos/${gameId}.png`}
+                            alt={GAME_LIST.find(g => g.id === gameId)?.name || gameId}
+                            className="game-logo"
+                            title={GAME_LIST.find(g => g.id === gameId)?.name}
+                          />
+                          <div className="game-methods">
+                            {gameMethods.map(method => {
+                              const config = METHOD_CONFIG[method] || { label: method, color: '#adb5bd' };
+                              return (
+                                <span
+                                  key={method}
+                                  className="method-badge"
+                                  style={{ backgroundColor: config.color }}
+                                >
+                                  {config.label}
+                                </span>
+                              );
+                            })}
+                          </div>
+                        </div>
                       );
                     })}
                   </div>

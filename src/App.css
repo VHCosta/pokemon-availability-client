@@ -169,16 +169,24 @@ body {
   text-transform: capitalize;
 }
 
-/* Game Logos */
-.game-logos {
+/* Games Section */
+.games-section {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
   justify-content: center;
-  gap: 0.5rem;
   margin-bottom: 1rem;
 }
 
+.game-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .game-logo {
-  height: 32px;
+  height: 80px;
   width: auto;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -189,12 +197,12 @@ body {
   transform: scale(1.1);
 }
 
-/* Method Badges */
-.method-badges {
+.game-methods {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.25rem;
   justify-content: center;
+  max-width: 120px;
 }
 
 .method-badge {
@@ -203,7 +211,7 @@ body {
   font-size: 0.75rem;
   font-weight: 500;
   color: white;
-  background-color: #868e96;
+  white-space: nowrap;
 }
 
 .evolution-chain {

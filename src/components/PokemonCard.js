@@ -60,7 +60,7 @@ const PokemonCard = ({ pokemon }) => {
                             src={`/game-logos/${game}.png`}
                             alt={game}
                             className="game-logo"
-                            title={GAME_NAMES[game] || game} // Add a GAME_NAMES mapping constant
+                            title={GAME_NAMES[game] || game} 
                         />
                     ))}
                 </div>
