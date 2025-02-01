@@ -140,17 +140,8 @@ function App() {
                   
                   <div className="games-section">
                     {pokemon.games.map(gameId => {
-                      const gameMethods = [
-                        ...(pokemon.methodsByGame[gameId] || []),
-                        ...(pokemon.evolutions?.prev ? ['evolution'] : []),
-                        ...((!pokemon.evolutions?.prev && 
-                          ['gold', 'silver', 'crystal', 'ruby', 'sapphire', 'emerald', 'firered', 'leafgreen',
-                           'diamond', 'pearl', 'platinum', 'heartgold', 'soulsilver', 'black', 'white', 
-                           'black-2', 'white-2', 'x', 'y', 'omega-ruby', 'alpha-sapphire', 'sun', 'moon',
-                           'ultra-sun', 'ultra-moon', 'sword', 'shield', 'brilliant-diamond', 'shining-pearl',
-                           'legends-arceus', 'scarlet', 'violet'].includes(gameId)
-                        ) ? ['egg'] : [])
-                      ];
+                      // Only use methods from server
+                      const gameMethods = pokemon.methodsByGame[gameId] || [];
 
                       return (
                         <div key={gameId} className="game-section">
