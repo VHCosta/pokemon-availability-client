@@ -1,8 +1,9 @@
 # Pokémon Availability - Client
-A front-end client of a two part app for checking Pokémon availability given a selection of games. 
+A frontend client of a two part app for checking Pokémon availability given a selection of games. 
 
-Written in ReactJS. Code partially generated using DeepSeek-R1 and Cline extension with Claude 3.5-Sonnet on VSCode.
+This project is written in ReactJS. Parts of the code were generated using [DeepSeek-R1](https://chat.deepseek.com/) and the [Cline](https://cline.bot/) extension with [Claude 3.5-Sonnet](https://claude.ai/) in Visual Studio Code (VSCode).
 
+### Server
 You may find the Server repo [here](https://github.com/VHCosta/pokemon-availability-server).
 
 ## Known issues
