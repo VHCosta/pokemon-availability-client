@@ -75,7 +75,7 @@ function App() {
     setLoading(true);
     
     try {
-      const response = await axios.post(process.env.REACT_APP_API_URL || 'https://pokemon-availability-server.onrender.com/api/pokemon', {
+      const response = await axios.post(process.env.REACT_APP_API_URL || 'http://localhost:5000/api/pokemon', {
         versions: selectedGames
       });
       setPokemonList(response.data.pokemon);
@@ -89,6 +89,8 @@ function App() {
     <div className="app-container">
       <header className="app-header">
         <h1>Pokémon Availability Checker</h1>
+        
+        <h3><b>Attention:</b> Data for Switch games is currenly unavailable.</h3>
       </header>
 
       <main className="main-content">
