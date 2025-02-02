@@ -75,7 +75,7 @@ function App() {
     setLoading(true);
     
     try {
-      const response = await axios.post(process.env.REACT_APP_API_URL || 'https://pokemon-availability-server.onrender.com:5000/api/pokemon', {
+      const response = await axios.post(process.env.REACT_APP_API_URL || 'https://pokemon-availability-server.onrender.com/api/pokemon', {
         versions: selectedGames
       });
       setPokemonList(response.data.pokemon);
