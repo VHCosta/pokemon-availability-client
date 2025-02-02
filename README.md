@@ -8,6 +8,7 @@ You may find the Server repo [here](https://github.com/VHCosta/pokemon-availabil
 
 ## Known bugs/issues/things to improve
 
+* Missing availability data for all Switch games. This data is unavailable in PokeAPI.
 * Filtering Slot 2 data is currently handled in the frontend rendering logic with some if-statements. Toggling Gen 3 games on/off allows you to see this behavior in realtime. For example, if Caterpie is available in Pearl with FireRed in Slot 2, you should see "Slot 2 (FireRed)" when both FireRed and Pearl are selected. This verification should be moved to the backend, unless enough interest in the current functionality is voiced.
 
 ## Future Plans:
