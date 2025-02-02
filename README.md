@@ -6,13 +6,13 @@ This project is written in ReactJS. Parts of the code were generated using [Deep
 ### Server
 You may find the Server repo [here](https://github.com/VHCosta/pokemon-availability-server).
 
-## Known issues
+## Known bugs/issues/things to improve
 
-* Some Pokemon are missing Evolution tags if their previous form was only obtainable by evolving. _(Example: On selecting Pokemon Red, Ivysaur is only obtainable through evolving the starter Bulbasaur, so it gets the Evolution tag. Venusaur is missing its tag.)_
+* Filtering Slot 2 data is currently handled in the frontend rendering logic with some if-statements. Toggling Gen 3 games on/off allows you to see this behavior in realtime. For example, if Caterpie is available in Pearl with FireRed in Slot 2, you should see "Slot 2 (FireRed)" when both FireRed and Pearl are selected. This verification should be moved to the backend, unless enough interest in the current functionality is voiced.
 
 ## Future Plans:
 
-* Include an option to find Unavailable Pokemon, basically inverting the output.
+* Include an option to find Unavailable Pokemon, basically "inverting" the output.
 
 ## Credits
 
