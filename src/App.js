@@ -54,7 +54,13 @@ const METHOD_CONFIG = {
   'rock-smash': { label: 'Rock Smash', color: '#868e96' },
   'headbutt': { label: 'Headbutt', color: '#a9e34b' },
   'evolution': { label: 'Evolution', color: '#9775fa' },
-  'egg': { label: 'Egg', color: '#ffd43b' }
+  'egg': { label: 'Egg', color: '#ffd43b' },
+  'slot2': { label: 'Slot 2', color: '#f03e3e' },
+  'Slot 2 (Firered)' : { label: 'Slot 2 (FireRed)', color: '#f03e3e' },
+  'Slot 2 (Leafgreen)' : { label: 'Slot 2 (LeafGreen)', color: 'green' },
+  'Slot 2 (Ruby)' : { label: 'Slot 2 (Ruby)', color: 'red' },
+  'Slot 2 (Sapphire)' : { label: 'Slot 2 (Sapphire)', color: 'blue' },
+  'Slot 2 (Emerald)' : { label: 'Slot 2 (Emerald)', color: 'green' },
 };
 
 function App() {
@@ -154,6 +160,26 @@ function App() {
                           <div className="game-methods">
                             {gameMethods.map(method => {
                               const config = METHOD_CONFIG[method] || { label: method, color: '#adb5bd' };
+                              if (method === 'slot2' ) {
+                                //skip this one
+                                return null;
+                              }
+                              if (method === 'Slot 2 (Firered)' && /* firered is not selected */ !selectedGames.includes('firered')) {
+                                return null;
+                              }
+                              if (method === 'Slot 2 (Leafgreen)' && /* leafgreen is not selected */ !selectedGames.includes('leafgreen')) {
+                                return null;
+                              }
+                              if (method === 'Slot 2 (Ruby)' && /* ruby is not selected */ !selectedGames.includes('ruby')) {
+                                return null;
+                              }
+                              if (method === 'Slot 2 (Sapphire)' && /* sapphire is not selected */ !selectedGames.includes('sapphire')) {
+                                return null;
+                              }
+                              if (method === 'Slot 2 (Emerald)' && /* emerald is not selected */ !selectedGames.includes('emerald')) {
+                                return null;
+                              }
+
                               return (
                                 <span
                                   key={method}
