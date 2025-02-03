@@ -1,7 +1,7 @@
 # Pokémon Availability - Client
 A frontend client of a two part app for checking Pokémon availability given a selection of games. 
 
-This project is written in ReactJS. Parts of the code were generated using [DeepSeek-R1](https://chat.deepseek.com/) and the [Cline](https://cline.bot/) extension with [Claude 3.5-Sonnet](https://claude.ai/) in Visual Studio Code (VSCode).
+This project is written using ReactJS. Parts of the code were initially generated using [DeepSeek-R1](https://chat.deepseek.com/) and the [Cline](https://cline.bot/) extension with [Claude 3.5-Sonnet](https://claude.ai/) in Visual Studio Code (VSCode).
 
 ## 🎉 The app is live! 🥳
 That's right, this app is finally live! The client is on Netlify, and the server is on Render.com!
@@ -22,7 +22,7 @@ You may find the Server repository [here](https://github.com/VHCosta/pokemon-ava
 
 ## Future Plans:
 
-* Include an option to find Unavailable Pokemon, basically "inverting" the output.
+* Include an option to find Unavailable Pokémon, basically "inverting" the output.
 
 ## Credits
 
